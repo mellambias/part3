@@ -94,3 +94,32 @@ Responde a solicitudes como estas con el código de estado apropiado y también 
 ```js
 { error: 'name must be unique' }
 ```
+
+## 3.7: Backend de la Agenda Telefónica, paso 7
+
+Agrega el middleware [**morgan**](https://github.com/expressjs/morgan) a tu aplicación para el registro de mensajes. Configúralo para registrar mensajes en tu consola según la configuración _tiny_.
+
+La documentación de Morgan no es la mejor y es posible que debas dedicar algún tiempo a averiguar cómo configurarlo correctamente.
+Sin embargo, la mayor parte de la documentación del mundo cae en la misma categoría, por lo que es bueno aprender a descifrar e interpretar documentación críptica en cualquier caso.
+
+Morgan se instala como todas las demás librerías con el comando `npm install`.
+La puesta en funcionamiento de Morgan ocurre de la misma manera que la configuración de cualquier otro middleware mediante el comando `app.use`.
+
+## 3.8*: Backend de la Agenda Telefónica, paso 8
+
+Configura **morgan** para que también muestre los datos enviados en las solicitudes **HTTP POST**:
+![terminal mostrando los datos de post siendo enviados](images/image-3.png)
+
+Ten en cuenta que el registro de datos incluso en la consola puede ser peligroso,
+ya que puede contener datos confidenciales y puede violar la ley de privacidad local
+(por ejemplo, GDPR en la UE) o el estándar comercial.
+
+En este ejercicio, no tienes que preocuparse por los problemas de privacidad, pero en la práctica,
+intenta no registrar ningún dato sensible.
+
+Este ejercicio puede resultar bastante complicado, aunque la solución no requiere mucho código.
+
+Este ejercicio se puede completar de diferentes formas. Una de las posibles soluciones utiliza estas dos técnicas:
+
+- [creando nuevos tokens](https://github.com/expressjs/morgan#creating-new-tokens)
+- [JSON.stringify](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)

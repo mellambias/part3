@@ -1,4 +1,5 @@
 const Express = require("express");
+const morgan = require("morgan");
 const app = Express();
 
 const PORT = 3001;
@@ -26,7 +27,17 @@ let data = [
 	},
 ];
 
+// middlewares
+
+//3.8 registrar mensajes en tu consola según la configuración tiny.
+morgan.token("body", (req, res) => JSON.stringify(req.body));
+const logger = morgan(
+	":method :url :status :res[content-length] - :response-time ms :body",
+);
+
+// routes
 app.use(Express.json());
+app.use(logger);
 
 //3.1 Devuelve toda la información
 app.get("/api/persons", (req, res) => {
