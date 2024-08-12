@@ -123,3 +123,41 @@ Este ejercicio se puede completar de diferentes formas. Una de las posibles solu
 
 - [creando nuevos tokens](https://github.com/expressjs/morgan#creating-new-tokens)
 - [JSON.stringify](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)
+
+## Ejercicios 3.9.-3.11
+
+Los siguientes ejercicios no requieren muchas líneas de código. Sin embargo, pueden ser un desafío, porque debes comprender exactamente qué está sucediendo y dónde, y las configuraciones deben ser las correctas.
+
+## 3.9 Backend de la Agenda Telefónica, paso 9
+
+Haz que el backend funcione con el frontend de la agenda telefónica de los ejercicios de la parte anterior.
+
+No implementes todavía la funcionalidad para realizar cambios en los números de teléfono, que se implementará en el ejercicio 3.17.
+
+Probablemente tendrás que hacer algunos pequeños cambios en el frontend, al menos en las URL del backend. Recuerda mantener abierta la consola del desarrollador en tu navegador. Si algunas solicitudes HTTP fallan, debes verificar en la pestaña Network qué está sucediendo.
+
+Vigila también la consola del backend. Si no hiciste el ejercicio anterior, vale la pena imprimir los datos de la solicitud o request.body en la consola en el controlador de eventos responsable de las solicitudes POST.
+
+## 3.10 Backend de la Agenda Telefónica, paso 10
+
+Despliega el backend en Internet, por ejemplo en **Fly.io** o **Render**.
+
+Prueba el backend desplegado con un navegador y el REST client de VS Code o con Postman para asegurarte de que funcione.
+
+>PRO TIP: Cuando despliegues tu aplicación en Internet, vale la pena al menos al principio estar atento a los `logs` de la aplicación EN TODO MOMENTO.
+
+Crea un **README.md** en la raíz de tu repositorio y agrega un enlace a tu aplicación en línea.
+
+>NOTA: como se mencionó, debes desplegar el BACKEND al servicio en la nube. Si estás utilizando Fly.io, los comandos deben ejecutarse en el directorio raíz del backend (es decir, en el mismo directorio donde se encuentra el package.json del backend). En caso de usar Render, el backend debe estar en la raíz de tu repositorio.
+
+NO deberás desplegar el frontend directamente en ninguna etapa de esta parte. Solo se desplegara el repositorio del backend en todo este proceso, nada más.
+
+## 3.11 Agenda Telefónica Full Stack
+
+Genera un **build de producción de tu frontend** y agrégalo a la aplicación en Internet utilizando el método introducido en esta parte.
+
+>NB: Si usas Render, asegúrate de que el directorio `dist` no esté ignorado por Git en el backend.
+
+También, asegúrate de que el frontend aún funcione localmente (en modo de desarrollo cuando se inicia con el comando `npm run dev`).
+
+Si encuentras problemas para que la aplicación funcione, asegúrate de que tu estructura de directorios coincida con la [aplicación de ejemplo](https://github.com/fullstack-hy2020/part3-notes-backend/tree/part3-3).

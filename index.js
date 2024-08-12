@@ -1,5 +1,7 @@
 const Express = require("express");
 const morgan = require("morgan");
+const cors = require("cors");
+const express = require("express");
 const app = Express();
 
 const PORT = 3001;
@@ -36,8 +38,10 @@ const logger = morgan(
 );
 
 // routes
+app.use(cors());
 app.use(Express.json());
 app.use(logger);
+app.use(express.static("dist"));
 
 //3.1 Devuelve toda la información
 app.get("/api/persons", (req, res) => {
