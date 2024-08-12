@@ -8,7 +8,7 @@
 		"dev": "nodemon index.js",
 		"build:ui": "cd ../part2/phonebook && pnpm run build:ui",
 		"build:server": "rm -rf dist && pnpm run build:ui && cp -r ../part2/phonebook/dist ./",
-		"deploy": "git add . && git commit -m serverbuild && git push"
+		"deploy": "pnpm run build:server && git add . && git commit -m serverbuild && git push"
 	},
 	"keywords": ["express", "node"],
 	"author": "mellambias@gmail.com",
