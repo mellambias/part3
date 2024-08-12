@@ -71,7 +71,7 @@ app.delete("/api/persons/:id", (req, res) => {
 	const id = Number(req.params.id);
 	const person = data.find((person) => person.id === id);
 	if (person) {
-		data = data.filter((person) => person.id === id);
+		data = data.filter((person) => person.id !== id);
 		res.statusMessage = `Person with id ${id} It has been eliminated`;
 		res.status(204).end();
 	} else {

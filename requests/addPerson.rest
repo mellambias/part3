@@ -8,3 +8,15 @@ Content-Type: application/json
 
 ###
 GET http://localhost:3001/api/persons/
+
+###
+POST https://server-part3.onrender.com/api/persons/
+Content-Type: application/json
+
+{
+    "name":"Miguel Llambias",
+    "number":"34 661-661-661"
+}
+
+###
+GET https://server-part3.onrender.com/api/persons/
