@@ -163,3 +163,43 @@ Genera un **build de producción de tu frontend** y agrégalo a la aplicación e
 También, asegúrate de que el frontend aún funcione localmente (en modo de desarrollo cuando se inicia con el comando `npm run dev`).
 
 Si encuentras problemas para que la aplicación funcione, asegúrate de que tu estructura de directorios coincida con la [aplicación de ejemplo](https://github.com/fullstack-hy2020/part3-notes-backend/tree/part3-3).
+
+## 3.13: Base de datos de la Agenda Telefónica, paso 1
+
+Cambia la búsqueda de todas las entradas de la agenda telefónica para que los datos se obtengan desde la base de datos.
+
+Verifica que el frontend funcione después de que se hayan realizado los cambios.
+
+En los siguientes ejercicios, escribe todo el código específico de Mongoose en su propio módulo, como hicimos en el capítulo Configuración de la base de datos en su propio módulo.
+
+## 3.14: Base de datos de la Agenda Telefónica, paso 2
+
+Cambia el backend para que los nuevos números se guarden en la base de datos. Verifica que tu frontend aún funcione después de los cambios.
+
+En esta etapa, puedes ignorar si ya existe una persona en la base de datos con el mismo nombre que la persona que estás agregando.
+
+## 3.15: Base de datos de la Agenda Telefónica, paso 3
+
+Cambia el backend para que la eliminación de entradas de la agenda telefónica se refleje en la base de datos.
+
+Verifica que el frontend aún funcione después de realizar los cambios.
+
+## 3.16: Base de datos de la Agenda Telefónica, paso 4
+
+Mueve el manejo de errores de la aplicación a un nuevo middleware de manejo de errores.
+
+## 3.17*: Base de datos de la Agenda Telefónica, paso 5
+
+Si el usuario intenta crear una nueva entrada en la agenda para una persona cuyo nombre ya está en la agenda, el frontend intentará actualizar el número de teléfono de la entrada existente realizando una solicitud HTTP PUT a la URL única de la entrada.
+
+Modifica el backend para admitir esta solicitud.
+
+Verifica que el frontend funcione después de realizar los cambios.
+
+## 3.18*: Base de datos de la Agenda Telefónica, paso 6
+
+También actualiza el manejo de las rutas `api/persons/:id` e `info` para usar la base de datos, y verifica que funcionen directamente con el navegador, Postman o el cliente REST de VS Code.
+
+La inspección de una entrada individual de la agenda telefónica desde el navegador debería verse así:
+
+![navegador mostrando los datos de una persona en la ruta api/persons/id](images/image-4.png)

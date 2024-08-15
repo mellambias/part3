@@ -10,12 +10,17 @@
 		"build:server": "rm -rf dist && pnpm run build:ui && cp -r ../part2/phonebook/dist ./",
 		"deploy": "pnpm run build:server && git add . && git commit -m serverbuild && git push"
 	},
-	"keywords": ["express", "node"],
+	"keywords": [
+		"express",
+		"node"
+	],
 	"author": "mellambias@gmail.com",
 	"license": "ISC",
 	"dependencies": {
 		"cors": "2.8.5",
+		"dotenv": "16.4.5",
 		"express": "4.19.2",
+		"mongoose": "8.5.2",
 		"morgan": "1.10.0"
 	},
 	"devDependencies": {
