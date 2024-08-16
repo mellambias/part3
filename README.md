@@ -203,3 +203,60 @@ También actualiza el manejo de las rutas `api/persons/:id` e `info` para usar l
 La inspección de una entrada individual de la agenda telefónica desde el navegador debería verse así:
 
 ![navegador mostrando los datos de una persona en la ruta api/persons/id](images/image-4.png)
+
+## 3.19*: Base de datos de la Agenda Telefónica, paso 7
+
+Amplía la validación para que el nombre almacenado en la base de datos tenga al menos tres caracteres de longitud.
+
+Expande el frontend para que muestre algún tipo de mensaje de error cuando ocurra un error de validación.
+El manejo de errores se puede implementar agregando un bloque catch como se muestra a continuación:
+
+```js
+personService
+    .create({ ... })
+    .then(createdPerson => {
+      // ...
+    })
+    .catch(error => {
+      // está es la forma de acceder al mensaje de error
+      console.log(error.response.data.error)
+    })
+```
+
+Puedes mostrar el mensaje de error predeterminado devuelto por Mongoose, aunque no son muy legibles:
+
+![captura de pantalla de la agenda telefónica que muestra el fallo de validación de la persona](images/image-5.png)
+
+>NB: En las operaciones de actualización, los validadores de mongoose están desactivados por defecto.
+Lee la [documentación](https://mongoosejs.com/docs/validation.html) para ver cómo habilitarlos.
+
+## 3.20*: Base de datos de la Agenda Telefónica, paso 8
+
+Agrega validación a tu aplicación de agenda telefónica para asegurarte de que los números de teléfono tengan el formato correcto.
+
+- Un número de teléfono debe:
+  - Tener una longitud de 8 o más caracteres.
+  - Estar formado por dos partes separadas por `-`
+    - la primera parte tiene dos o tres números y
+    - la segunda parte también consiste en números.
+
+Por ejemplo, 09-1234556 y 040-22334455 son números de teléfono válidos.
+Por ejemplo, 1234556, 1-22334455 y 10-22-334455 son inválidos.
+
+**Utiliza un [validador personalizado](https://mongoosejs.com/docs/validation.html#custom-validators) para implementar la segunda parte de la validación.**
+
+Si una solicitud HTTP POST intenta agregar una persona con un número de teléfono no válido,
+el servidor debería responder con un _código de estado apropiado_ y un _mensaje de error_.
+
+## 3.21 Desplegando el backend con base de datos en producción
+
+Genera una nueva versión **"full stack"** de la aplicación creando una nueva compilación de producción del frontend y copiándola al repositorio del backend. Verifica que todo funcione localmente utilizando la aplicación completa desde la dirección [local](http://localhost:3001/).
+
+Lleva la versión más reciente a Fly.io/Render y verifica que todo funcione allí también.
+
+>NOTA: debes desplegar el BACKEND en el servicio en la nube. Si estás utilizando Fly.io, los comandos deben ejecutarse en el directorio raíz del backend (es decir, en el mismo directorio donde se encuentra el package.json del backend).
+En caso de usar Render, el backend debe estar en la raíz de tu repositorio.
+
+NO debes desplegar el frontend directamente en ninguna etapa de esta parte.
+
+Es solo el repositorio del backend que se despliega en toda esta sección, nada más.

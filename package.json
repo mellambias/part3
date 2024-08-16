@@ -6,14 +6,11 @@
 	"scripts": {
 		"start": "node index.js",
 		"dev": "nodemon index.js",
-		"build:ui": "cd ../part2/phonebook && pnpm run build:ui",
-		"build:server": "rm -rf dist && pnpm run build:ui && cp -r ../part2/phonebook/dist ./",
+		"build:ui": "pnpm --prefix ../part2/phonebook run build && cp -r ../part2/phonebook/dist ./",
+		"build:server": "rm -rf dist && pnpm run build:ui ",
 		"deploy": "pnpm run build:server && git add . && git commit -m serverbuild && git push"
 	},
-	"keywords": [
-		"express",
-		"node"
-	],
+	"keywords": ["express", "node"],
 	"author": "mellambias@gmail.com",
 	"license": "ISC",
 	"dependencies": {

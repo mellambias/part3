@@ -102,28 +102,20 @@ app.delete("/api/persons/:id", (req, res, next) => {
 
 // 3.5 crear una nueva entrada en la agenda telefónica
 // 3.6 manejo de errores para crear nuevas entradas.
-app.post("/api/persons", (req, res) => {
+app.post("/api/persons", (req, res, next) => {
 	const body = req.body;
-	if (!body.name || !body.number) {
-		return res.status(400).json({
-			error: "name or number missing",
-		});
-	}
-	const exist = data.find((person) => person.name === body.name);
-	if (exist) {
-		return res.status(400).json({
-			error: "name must be unique",
-		});
-	}
+
 	const person = new Person({
-		id: Math.floor(Math.random() * 1000),
 		name: body.name,
 		number: body.number,
 	});
 
-	person.save().then((savedPerson) => {
-		res.json(savedPerson);
-	});
+	person
+		.save()
+		.then((savedPerson) => {
+			res.json(savedPerson);
+		})
+		.catch((error) => next(error));
 });
 
 // 3.17 actualizar el número de una entrada existente
