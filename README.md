@@ -260,3 +260,9 @@ En caso de usar Render, el backend debe estar en la raíz de tu repositorio.
 NO debes desplegar el frontend directamente en ninguna etapa de esta parte.
 
 Es solo el repositorio del backend que se despliega en toda esta sección, nada más.
+
+## 3.22: Configuración de Lint
+
+Agrega ESlint a tu aplicación y corrige todas las advertencias.
+
+Este fue el último ejercicio de esta parte del curso. Es hora de enviar tu código a GitHub y marcar todos tus ejercicios terminados en el sistema de [envío de ejercicios](https://studies.cs.helsinki.fi/stats/courses/fullstackopen).

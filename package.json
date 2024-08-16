@@ -10,7 +10,10 @@
 		"build:server": "rm -rf dist && pnpm run build:ui ",
 		"deploy": "pnpm run build:server && git add . && git commit -m serverbuild && git push"
 	},
-	"keywords": ["express", "node"],
+	"keywords": [
+		"express",
+		"node"
+	],
 	"author": "mellambias@gmail.com",
 	"license": "ISC",
 	"dependencies": {
@@ -21,6 +24,8 @@
 		"morgan": "1.10.0"
 	},
 	"devDependencies": {
+		"@biomejs/biome": "1.8.3",
+		"globals": "^15.9.0",
 		"nodemon": "3.1.4"
 	}
 }
